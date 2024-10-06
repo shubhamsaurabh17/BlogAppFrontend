@@ -1,0 +1,30 @@
+.div-card{
+    background-color:#ccd9ff;
+    /* background-color: blue !; */
+}
+
+.tab-g{
+    width: 99%;
+}
+
+
+.details-table {
+    width: 100%;
+    margin: 0 10% 0 10% ;
+  }
+  .details-table td {
+    padding: 8px;
+    vertical-align: top;
+  }
+  .details-table td:first-child {
+    width: 150px; /* Adjust the width for labels */
+  }
+
+
+  .card{
+    /* background-color: #eeeaea; */
+    background-color: rgb(238, 243, 248);
+    border-radius: 20px;
+    
+  }
+ 

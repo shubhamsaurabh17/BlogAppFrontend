@@ -1,0 +1,43 @@
+<div class="m-3 fw-bold">
+    <mat-card appearance="outlined" class="cards">
+        <mat-card-title class="px-3 mt-2">{{blogs.title}}</mat-card-title>
+        <mat-card-subtitle class="px-3" style="color: red; font-style: italic;">Author: {{blogs?.user?.userName}} |
+            Category:
+            {{blogs.category}} | {{blogs.createdDate | slice:0:10}}</mat-card-subtitle>
+        <mat-card-content style="color: green; font-weight: bolder;">{{blogs.content}}</mat-card-content>
+           
+            <img alt="BlogImage" [src]="imageSrc" class="blogImage" title="Blog"/>
+
+        <h6 class="mt-3 mx-3 my-2">What People Say About This Post?</h6>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form class="example-form" (ngSubmit)="commentSubmit()">
+                    <div class="row">
+                        <div class="col-10">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Leave a comment</mat-label>
+                                <textarea matInput placeholder="Your comment goes here..." rows="3" name="commentDescription" [(ngModel)]="comment.commentDescription"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-2"><br>
+                            <button mat-fab aria-label="Example icon button with a delete icon">
+                                <mat-icon>send</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <div *ngFor="let c of blogs.comments; index as i">
+            <mat-card appearance="raised" class="commentCards mt-4">
+                <mat-card-subtitle class="mx-3">Commented By {{c.commentedBy}} on
+                    {{c.commentedOn|slice:0:10}}</mat-card-subtitle>
+                <mat-card-content class="" [ngClass]="{'even': i%2===0}">{{c.commentDescription}}</mat-card-content>
+            </mat-card>
+        </div><br>
+    </mat-card><br>
+</div>

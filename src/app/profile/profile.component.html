@@ -1,0 +1,44 @@
+<mat-tab-group animationDuration="0ms">
+    <mat-tab label="Profile">
+      <div class="row tab-g">
+        <div class="col-4"></div>
+        <div class="col-4"><br>
+          <mat-card appearance="raised" class="card">
+            <mat-card-content>
+             <div class="text-center">
+              <mat-icon aria-hidden="false" fontIcon="contacts"></mat-icon>
+             </div>
+              <table class="details-table">
+                <tr>
+                  <td><strong>Username:</strong></td>
+                  <td>{{data.userName}}</td>
+                </tr>
+                <tr>
+                  <td><strong>First Name:</strong></td>
+                  <td>{{data.userFirstName}}</td>
+                </tr>
+                <tr>
+                  <td><strong>Second Name:</strong></td>
+                  <td>{{data.userLastName}}</td>
+                </tr>
+                <tr>
+                  <td><strong>Email:</strong></td>
+                  <td>{{data.email}}</td>
+                </tr>
+                <tr>
+                  <td><strong>Role:</strong></td>
+                  <td>{{data.role?.[0]?.roleName}}</td>
+                </tr>
+                <tr>
+                  <td><strong>Role Description:</strong></td>
+                  <td>{{data.role?.[0]?.roleDescription}}</td>
+                </tr>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </mat-tab>
+    <mat-tab label="My Blog"> <app-view-blog></app-view-blog> </mat-tab>
+  </mat-tab-group>

@@ -1,0 +1,24 @@
+<div class="div-card p-3">
+    <h6 class="text-center fw-bold">Login Page</h6>
+    <form (ngSubmit)="submit()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" required="true"
+            type="text" name="userName" [(ngModel)]="data.userName"
+            >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" required="true"
+            type="password" name="userPassword" [(ngModel)]="data.userPassword"
+            >
+        </mat-form-field>
+
+        <div class="text-center">
+            <button mat-raised-button color="primary" class="me-2" type="submit">LOGIN</button>
+            <button mat-raised-button color="warn" type="reset">RESET</button>
+        </div>
+    </form>
+
+</div>

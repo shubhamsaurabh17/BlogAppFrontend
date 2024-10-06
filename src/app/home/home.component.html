@@ -1,0 +1,22 @@
+<div *ngIf="blogs.length===0">
+  <div class="m-5 text-center fw-bold div-card">
+    <mat-card appearance="outlined">
+      <mat-card-content style="color: green;">No Blogs Available!</mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="m-3 fw-bold">
+  <div *ngFor="let b of paginatedBlogs; index as i">
+    <mat-card appearance="outlined" class="cards"  [ngClass]="{'even':i%2===0}" [routerLink]="['/blog', b.id]" type="button">
+      <mat-card-title class="px-3 mt-2">{{b.title}}</mat-card-title>
+      <mat-card-subtitle class="px-3" style="color: red; font-style: italic;">Author: {{b.user.userName}} | Category:
+        {{b.category}} | {{b.createdDate | slice:0:10}}</mat-card-subtitle>
+      <mat-card-content style="color: green; font-weight: bolder;">{{b.content | slice:0:300}} .....</mat-card-content>
+    </mat-card><br>
+  </div>
+  <mat-paginator [length]="totalLength"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[2, 5, 10, 25]"
+    (page)="onPageChange($event)" class="page">
+</mat-paginator>
+</div>

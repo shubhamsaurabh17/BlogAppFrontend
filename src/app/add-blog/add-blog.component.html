@@ -1,0 +1,39 @@
+<form class="example-form" (ngSubmit)="formSubmit()">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="row mt-4">
+        <div class="col">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Enter A Blog Title" type="text" name="title" [(ngModel)]="blog.title">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Category</mat-label>
+            <mat-select [(ngModel)]="blog.category" name="category">
+              <div *ngFor="let c of category">
+                <mat-option [value]="c">{{c}}</mat-option>
+              </div>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Content</mat-label>
+            <textarea matInput placeholder="Write Your Blog Content Here..." rows="8" type="text" name="content"
+              [(ngModel)]="blog.content"></textarea>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" style="width: 500px;" type="submit">SUBMIT</button>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <!-- <label for="file" class="form-label">Upload Image</label> -->
+            <input type="file" id="file" class="form-control" (change)="onChangeField($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</form>

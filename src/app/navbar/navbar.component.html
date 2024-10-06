@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fw-bold">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">BLOG's</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item" *ngIf="loggedIn() && role=='User'">
+                    <a class="nav-link active" aria-current="page" routerLink="/view">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="library_books"></mat-icon>
+                    </a>
+                </li> -->
+                <li class="nav-item" *ngIf="loggedIn() && role=='Admin' ">
+                    <a class="nav-link active" aria-current="page" routerLink="/admin">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="account_circle"></mat-icon>
+                    </a>
+                </li>
+
+                <li class="nav-item" *ngIf="!loggedIn()">
+                    <a class="nav-link active" aria-current="page" routerLink="/register">Register</a>
+                </li>
+
+                <li class="nav-item" *ngIf="!loggedIn()">
+                    <a class="nav-link active" aria-current="page" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item" *ngIf="loggedIn() && role=='User' || role=='Admin'">
+                    <a class="nav-link active" aria-current="page" routerLink="/add">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="post_add"></mat-icon>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="loggedIn() && role=='User'">
+                    <a class="nav-link active" aria-current="page" routerLink="/user">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="account_circle"></mat-icon>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="loggedIn()">
+                    <a class="nav-link active" (click)="logout()" type="button">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
